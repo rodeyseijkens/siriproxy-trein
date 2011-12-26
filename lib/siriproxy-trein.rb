@@ -39,7 +39,8 @@ class SiriProxy::Plugin::Trein < SiriProxy::Plugin
     object.make_root(last_ref_id)
     answer = SiriAnswer.new("Arrival Times", [
       SiriAnswerLine.new('logo','http://www.sire.nl/media/uploads/ns.gif'),
-      SiriAnswerLine.new('text','http://me%40rodey.nl:nJf4JgCl1rV5tv3TFxyqytJ7GTF2A_eNxpzw7zUPY1iSPAJCAYfslA@webservices.ns.nl/ns-api-stations'),
+      SiriAnswerLine.new('text','http://me%40rodey.nl:nJf4JgCl1rV5tv3TFxyqytJ7GTF2A_eNxpzw7zUPY1iSPAJCAYfslA@webservices.ns.nl/ns-api-stations')
+    ])
     object.views << SiriAnswerSnippet.new([answer])
     send_object object
     
