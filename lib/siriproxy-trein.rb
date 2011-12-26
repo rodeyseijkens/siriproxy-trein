@@ -4,9 +4,17 @@ require 'pp'
 
 
 class SiriProxy::Plugin::Trein < SiriProxy::Plugin
-  def initialize(config)
+  def initialize(config = {})
+    @config = config 
+    
+    ::Trein.configure do |config|
+      config.username = @config['username'] 
+      config.password = @config['password']
+    end 
     #if you have custom configuration options, process them here!
   end
+  
+  ##http://me%40rodey.nl:nJf4JgCl1rV5tv3TFxyqytJ7GTF2A_eNxpzw7zUPY1iSPAJCAYfslA@webservices.ns.nl/ns-api-stations
 
   #get the user's location and display it in the logs
   #filters are still in their early stages. Their interface may be modified
@@ -20,7 +28,7 @@ class SiriProxy::Plugin::Trein < SiriProxy::Plugin
     #    modifications made to it)
   end 
 
-  listen_for /test train/i do
+  listen_for /train test/i do
     say "I hear you loud and clear!" #say something to the user!
     
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
