@@ -28,7 +28,7 @@ class SiriProxy::Plugin::Trein < SiriProxy::Plugin
     #    modifications made to it)
   end 
 
-  listen_for /train test/i do
+  listen_for /Train test/i do
     say "I hear you loud and clear!" #say something to the user!
     
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
