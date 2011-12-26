@@ -1,10 +1,6 @@
 require 'cora'
 require 'siri_objects'
 require 'pp'
-require 'net/http'
-require 'rubygems'
-require 'xmlsimple'
-
 
 class SiriProxy::Plugin::Trein < SiriProxy::Plugin
   def initialize(config = {})
