@@ -7,10 +7,10 @@ class SiriProxy::Plugin::Trein < SiriProxy::Plugin
   def initialize(config = {})
     @config = config 
     
-    ::Trein.configure do |config|
-      config.username = @config['username'] 
-      config.password = @config['password']
-    end 
+    #::Trein.configure do |config|
+    #  config.username = @config['username'] 
+    #  config.password = @config['password']
+    #end 
     #if you have custom configuration options, process them here!
   end
   
